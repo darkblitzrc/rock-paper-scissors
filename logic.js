@@ -58,6 +58,6 @@ function game(){
     } else if (computer_score > player_score){
         return 'You lost your score was ' + player_score + ' but the computer score was ' + computer_score;
     } else{
-        return 'It\'s a tie between you and the computer!'
+        return 'It\'s a tie between you and the computer, Final Score: Player ' + player_score + ', Computer ' + computer_score;
     }
 }
