@@ -1,8 +1,5 @@
 function computerPlay(){
     let decider = Math.floor(Math.random() * 3);
-    let rock = 0
-    let scissors = 1
-    let paper = 2
     if (decider == 0){
         return 'rock'
     } else if (decider == 1){
@@ -17,27 +14,50 @@ function playRound(playerSelection = prompt(), computerSelection = computerPlay(
 
     const player = playerSelection.toLowerCase();
     const computer = computerSelection;
-    console.log('Computer draws... ' + computer);
     console.log('You drew... ' + player)
+    console.log('Computer draws... ' + computer);
     if (player == 'scissors' && computer == 'rock'){
-        return 'You lost, rock beats scissors!...'
+        console.log('You lost, rock beats scissors!...')
+        return ++computer_score
     } else if (player == 'rock' && computer == 'paper'){
-        return 'You lost, paper beats rock...'
+        console.log('You lost, paper beats rock...')
+        return ++computer_score
     } else if (player == 'paper' && computer == 'scissors'){
-        return 'You lost, scissors beats paper...'
+        console.log('You lost, scissors beats paper...')
+        return ++computer_score
     } else if (player == 'scissors' && computer == 'paper'){
-        return 'You won! Scissors beats paper.'
+        console.log('You won! Scissors beats paper.')
+        return ++player_score
     } else if (player == 'rock' && computer == 'scissors'){
-        return 'You won! Rock beats scissors.'
+        console.log('You won! Rock beats scissors.')
+        return ++player_score
     } else if (player == 'paper' && computer == 'rock'){
-        return 'You won! Paper beats rock.'
+        console.log('You won! Paper beats rock.')
+        return ++player_score
     } else if (player == 'scissors' && computer == 'scissors'){
-        return 'It\'s a tie!'
+        console.log('It\'s a tie!')
     } else if (player == 'rock' && computer == 'rock'){
-        return 'It\'s a tie!'
+        console.log('It\'s a tie!')
     } else if (player == 'paper' && computer == 'paper'){
-        return 'It\'s a tie!'
+        console.log('It\'s a tie!')
     } else {
-        return 'Invalid choice, please write either: rock, paper or scissors'
+        console.log('Invalid choice, please write either: rock, paper or scissors')
+    }
+}
+let player_score = 0
+let computer_score = 0
+
+function game(){
+    player_score = 0
+    computer_score = 0
+    for (let i = 0; i < 5; i++){
+        playRound();
+    }
+    if (player_score > computer_score){
+        return 'You won! Your score was...' + player_score;
+    } else if (computer_score > player_score){
+        return 'You lost your score was ' + player_score + ' but the computer score was ' + computer_score;
+    } else{
+        return 'It\'s a tie between you and the computer!'
     }
 }
