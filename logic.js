@@ -50,7 +50,8 @@ let computer_score = 0
 function game(){
     player_score = 0
     computer_score = 0
-    for (let i = 0; i < 5; i++){
+    rounds = parseInt(prompt('Please input the number of rounds you would like to play.'));
+    for (let i = 0; i < rounds; i++){
         playRound();
     }
     if (player_score > computer_score){
