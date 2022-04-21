@@ -10,30 +10,27 @@ function computerPlay(){
 }
 
 
-function playRound(playerSelection = prompt('Please type: \'rock\', \'paper\' or \'scissors\'!'), computerSelection = computerPlay()){
-
-    const player = playerSelection.toLowerCase();
-    const computer = computerSelection;
-    console.log('You drew... ' + player)
-    console.log('Computer draws... ' + computer);
-    if (player != 'rock' && player != 'scissors' && player != 'paper'){
+function playRound(playerSelection, computerSelection){
+    console.log('You drew... ' + playerSelection)
+    console.log('Computer draws... ' + computerSelection);
+    if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection != 'paper'){
         console.log('Invalid choice, please write either: rock, paper or scissors')
-    } else if (player == 'scissors' && computer == 'rock'){
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
         console.log('You lost, rock beats scissors!...')
         return ++computer_score
-    } else if (player == 'rock' && computer == 'paper'){
+    } else if (playerSelection == 'rock' && computerSelection == 'paper'){
         console.log('You lost, paper beats rock...')
         return ++computer_score
-    } else if (player == 'paper' && computer == 'scissors'){
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
         console.log('You lost, scissors beats paper...')
         return ++computer_score
-    } else if (player == 'scissors' && computer == 'paper'){
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
         console.log('You won! Scissors beats paper.')
         return ++player_score
-    } else if (player == 'rock' && computer == 'scissors'){
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
         console.log('You won! Rock beats scissors.')
         return ++player_score
-    } else if (player == 'paper' && computer == 'rock'){
+    } else if (playerSelection == 'paper' && computerSelection == 'rock'){
         console.log('You won! Paper beats rock.')
         return ++player_score
     } else {
@@ -48,7 +45,9 @@ function game(){
     computer_score = 0
     rounds = parseInt(prompt('Please input the number of rounds you would like to play.'));
     for (let i = 0; i < rounds; i++){
-        playRound();
+        playerSelection = prompt('Please type: \'Rock\', \'Paper\', \'Scissors\' to play!').toLowerCase();
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
     }
     if (player_score > computer_score){
         return 'You won! Your score was: ' + player_score;
