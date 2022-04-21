@@ -10,7 +10,7 @@ function computerPlay(){
 }
 
 
-function playRound(playerSelection = prompt(), computerSelection = computerPlay()){
+function playRound(playerSelection = prompt('Please type: \'rock\', \'paper\' or \'scissors\'!'), computerSelection = computerPlay()){
 
     const player = playerSelection.toLowerCase();
     const computer = computerSelection;
@@ -55,7 +55,7 @@ function game(){
         playRound();
     }
     if (player_score > computer_score){
-        return 'You won! Your score was...' + player_score;
+        return 'You won! Your score was: ' + player_score;
     } else if (computer_score > player_score){
         return 'You lost your score was ' + player_score + ' but the computer score was ' + computer_score;
     } else{
