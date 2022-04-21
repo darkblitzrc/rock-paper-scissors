@@ -16,7 +16,9 @@ function playRound(playerSelection = prompt('Please type: \'rock\', \'paper\' or
     const computer = computerSelection;
     console.log('You drew... ' + player)
     console.log('Computer draws... ' + computer);
-    if (player == 'scissors' && computer == 'rock'){
+    if (player != 'rock' && player != 'scissors' && player != 'paper'){
+        console.log('Invalid choice, please write either: rock, paper or scissors')
+    } else if (player == 'scissors' && computer == 'rock'){
         console.log('You lost, rock beats scissors!...')
         return ++computer_score
     } else if (player == 'rock' && computer == 'paper'){
@@ -34,14 +36,8 @@ function playRound(playerSelection = prompt('Please type: \'rock\', \'paper\' or
     } else if (player == 'paper' && computer == 'rock'){
         console.log('You won! Paper beats rock.')
         return ++player_score
-    } else if (player == 'scissors' && computer == 'scissors'){
-        console.log('It\'s a tie!')
-    } else if (player == 'rock' && computer == 'rock'){
-        console.log('It\'s a tie!')
-    } else if (player == 'paper' && computer == 'paper'){
-        console.log('It\'s a tie!')
     } else {
-        console.log('Invalid choice, please write either: rock, paper or scissors')
+        console.log('It\'s a tie!')
     }
 }
 let player_score = 0
