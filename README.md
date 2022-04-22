@@ -1,4 +1,6 @@
 # rock-paper-scissors
+![alt text](images/STICKER_SLAP-01.png "Rock, paper, scissors game logo")
+
 Rock paper scissors game via JS. For now the game can only be played through the console. To start the game please open your console using the following shortcut:
 
 MAC (Command + Option + J)
