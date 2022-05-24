@@ -1,14 +1,20 @@
 # rock-paper-scissors
 ![alt text](images/STICKER_SLAP-01.png "Rock, paper, scissors game logo")
 
-Rock paper scissors game via JS. For now the game can only be played through the console. To start the game please open your console using the following shortcut:
+Rock paper scissors game!
 
-MAC (Command + Option + J)
-Windows (Control + Shift + J)
+This was a fun little project that I made using HTML+CSS+JS. 
 
-After that you can start the game by writing the following function:
+The game is very simple, you have 3 buttons to chose your "weapon" of choice which can be either: Rock, Paper or Scissors! 
 
-game(); 
+Once you pick your choice, the computer will randomly select an option as well and it will compare the choices between the two players. 
 
-The game will prompt you to input a "pick" which in this case can be either "rock", "paper" or "scissors". The game will run for 5 rounds and at the end of the round it will output the winner of the total 5 rounds. Please note that it will result in an error if you mispell the choice but it is fine to use capital letters if you want or all lowercase, meaning it's case insensitive. 
+The logic is quite simple and follows the standard rules of the game:
 
+Rock beats Scissors.
+
+Paper beats Rock.
+
+Scissors beats Paper.
+
+thanks for playing :)

@@ -11,30 +11,30 @@ function computerPlay(){
 
 
 function playRound(playerSelection, computerSelection){
-    console.log('You drew... ' + playerSelection)
-    console.log('Computer draws... ' + computerSelection);
+    playerDraw = 'You drew... ' + playerSelection
+    computerDraw = 'Computer draws... ' + computerSelection
     if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection != 'paper'){
         console.log('Invalid choice, please write either: rock, paper or scissors')
     } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
-        console.log('You lost, rock beats scissors!...')
-        return ++computer_score
+        result = 'You lost this round, rock beats scissors...'
+        return computer_score++
     } else if (playerSelection == 'rock' && computerSelection == 'paper'){
-        console.log('You lost, paper beats rock...')
-        return ++computer_score
+        result = 'You lost this round, paper beats rock...'
+        return computer_score++
     } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
-        console.log('You lost, scissors beats paper...')
-        return ++computer_score
+        result = 'You lost this round, scissors beats paper...'
+        return computer_score++
     } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
-        console.log('You won! Scissors beats paper.')
-        return ++player_score
+        result = 'You won this round! Scissors beats paper.'
+        return player_score++
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
-        console.log('You won! Rock beats scissors.')
-        return ++player_score
+        result = 'You won this round! Rock beats scissors.'
+        return player_score++
     } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-        console.log('You won! Paper beats rock.')
-        return ++player_score
+        result = 'You won this round! Paper beats rock.'
+        return player_score++
     } else {
-        console.log('It\'s a tie!')
+        result = 'It\'s a tie!'
     }
 }
 let player_score = 0
@@ -57,3 +57,52 @@ function game(){
         return 'It\'s a tie between you and the computer, Final Score: Player ' + player_score + ', Computer ' + computer_score;
     }
 }
+
+//DOM methods
+
+// let divMain = document.querySelector('.main-menu')
+
+// let divResults = document.querySelector('.results');
+
+// let body = document.querySelector('body');
+
+// let title = document.querySelector('.title');
+
+let currentRound = document.querySelector('.current-round');
+
+let pScore = document.querySelector('.player-score');
+
+
+let cDraw = document.querySelector('.computer-draw')
+
+
+let roundResult = document.querySelector('.round-result');
+
+let buttons = document.getElementsByClassName('button');
+
+let buttonsList = Array.from(buttons);
+
+let round = 0
+
+buttonsList.forEach(button =>{
+    button.addEventListener('click', (e)=>{
+        playRound(e.target.innerText.toLowerCase(),computerPlay());
+        pScore.textContent = 'Your score is: ' + player_score;
+        currentRound.textContent = 'Round ' + ++round;
+        cDraw.textContent = computerDraw;
+        roundResult.textContent = result;
+        if (round == 5){
+            cDraw.textContent = computerDraw;
+            if (player_score > computer_score){
+                roundResult.textContent = 'YOU WON THE GAME! Your score was: ' + player_score;
+            } else if (computer_score > player_score){
+                roundResult.textContent = 'YOU LOST THE GAME! Computer Score was: ' + computer_score;
+            } else{
+                roundResult.textContent =  'It\'s a tie between you and the computer!'
+            }
+            player_score = 0
+            computer_score = 0
+            round = 0  
+        }
+    });
+});
