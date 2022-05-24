@@ -60,21 +60,11 @@ function game(){
 
 //DOM methods
 
-// let divMain = document.querySelector('.main-menu')
-
-// let divResults = document.querySelector('.results');
-
-// let body = document.querySelector('body');
-
-// let title = document.querySelector('.title');
-
 let currentRound = document.querySelector('.current-round');
 
 let pScore = document.querySelector('.player-score');
 
-
 let cDraw = document.querySelector('.computer-draw')
-
 
 let roundResult = document.querySelector('.round-result');
 
