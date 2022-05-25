@@ -24,9 +24,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 12rem;
-    width: 30rem;
-    background: #E8E8E8;
+    height: 18rem;
+    width: 35rem;
+    background: linear-gradient(0deg, rgba(47,143,157,1) 0%, rgba(179,232,229,1) 100%);
     border-radius: 8px;
 }
 
@@ -48,25 +48,6 @@ body{
 }
 
 
-.button {
-    justify-content: center;
-    margin: 8px;
-    width: 12rem;
-    height: 2rem;
-    background:#E8E8E8;
-    font-family: 'Comfortaa';
-    font-weight: 700;
-    border-radius: 8px;
-    border-style: none;
-    cursor: pointer;
-    color: #00334E;
-}
-
-.button:hover{
-    background-color: #d8d8d8;
-    box-shadow: 0px 5px 15px #0000006b;
-}
-
 .computer-draw{
     font-size: 18px;
     text-align: center;
@@ -78,7 +59,7 @@ body{
 .round-result{
     font-size: 22px;
     text-align: center;
-    color: #0072af;
+    color: #ffffff;
 }
 
 .choices{
