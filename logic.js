@@ -12,7 +12,7 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
     playerDraw = 'You drew... ' + playerSelection
-    computerDraw = 'Computer draws... ' + computerSelection
+    computerDraw = computerSelection;
     if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection != 'paper'){
         console.log('Invalid choice, please write either: rock, paper or scissors')
     } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
@@ -50,9 +50,28 @@ let cDraw = document.querySelector('.computer-draw')
 
 let roundResult = document.querySelector('.round-result');
 
+let computerImage = document.querySelector('.computer-image');
+computerImage.style.display = 'flex';
+computerImage.style.justifyContent = 'center';
+
+let rock = document.createElement('img');
+rock.src = "images/harvestable-resources-rock-dullite-2.svg";
+rock.height = '100'
+rock.width = '100'
+
+let scissors = document.createElement('img');
+scissors.src = 'images/Metal-Scissors.svg';
+scissors.height = '100'
+scissors.width = '100'
+
+let paper = document.createElement('img');
+paper.src = 'images/Paper-Roll-.svg';
+paper.height = '100'
+paper.width = '100'
+
 let choices = document.getElementsByClassName('choice');
 
-let choicesList = Array.from(choices)
+let choicesList = Array.from(choices);
 
 let round = 0
 
@@ -61,11 +80,23 @@ choicesList.forEach(choice => {
         playRound(e.target.id,computerPlay());
             pScore.textContent = 'Your score is: ' + player_score;
             currentRound.textContent = 'Round ' + ++round;
-
-            cDraw.textContent = computerDraw;
+            cDraw.textContent = 'Computer draws...'
+            if (computerDraw == 'rock'){
+                computerImage.appendChild(rock);
+                paper.remove();
+                scissors.remove();
+            } else if (computerDraw == 'scissors'){
+                computerImage.appendChild(scissors);
+                paper.remove();
+                rock.remove();
+            } else{
+                computerImage.appendChild(paper);
+                rock.remove();
+                scissors.remove();
+            }
             roundResult.textContent = result;
+
             if (round == 5){
-                cDraw.textContent = computerDraw;
                 if (player_score > computer_score){
                     roundResult.textContent = 'YOU WON THE GAME! Your score was: ' + player_score;
                 } else if (computer_score > player_score){
@@ -80,3 +111,4 @@ choicesList.forEach(choice => {
         
     })
 })
+
