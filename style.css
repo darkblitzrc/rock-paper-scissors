@@ -81,17 +81,18 @@ body{
     color: #0072af;
 }
 
-.testing-icons{
+.choices{
     width: 10rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.rock{
+.choice{
     transition: heigth 40ms, width 40ms;
+    margin: 1.5rem;
 }
-.rock:active {
+.choice:active {
     height: 90px;
     width: 90px;
 }
