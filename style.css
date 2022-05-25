@@ -10,12 +10,12 @@ body{
 
 .main-menu {
     padding:1rem;
-    height:25rem;
+    height:15rem;
     width:25rem;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,51,78,1) 0%, rgba(54,144,162,1) 100%);
     border-radius: 8px;
     display:flex;
-    align-items: center;
+    align-items:center;
     justify-content: center;
     flex-direction: column;
 }
@@ -40,7 +40,7 @@ body{
 
 .current-round{
     text-align: center;
-    color: #8bffff;
+    color: #c0f827;
 }
 
 .player-score{
