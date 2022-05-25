@@ -72,11 +72,11 @@ let buttons = document.getElementsByClassName('button');
 
 let buttonsList = Array.from(buttons);
 
-let round = 0
+let test = document.querySelector('.rock')
 
-buttonsList.forEach(button =>{
-    button.addEventListener('click', (e)=>{
-        playRound(e.target.innerText.toLowerCase(),computerPlay());
+test.addEventListener('click', () =>{
+    type = 'rock'
+    playRound(type,computerPlay());
         pScore.textContent = 'Your score is: ' + player_score;
         currentRound.textContent = 'Round ' + ++round;
         cDraw.textContent = computerDraw;
@@ -94,5 +94,30 @@ buttonsList.forEach(button =>{
             computer_score = 0
             round = 0  
         }
-    });
-});
+    
+})
+
+let round = 0
+
+// buttonsList.forEach(button =>{
+//     button.addEventListener('click', (e)=>{
+//         playRound(e.target.innerText.toLowerCase(),computerPlay());
+//         pScore.textContent = 'Your score is: ' + player_score;
+//         currentRound.textContent = 'Round ' + ++round;
+//         cDraw.textContent = computerDraw;
+//         roundResult.textContent = result;
+//         if (round == 5){
+//             cDraw.textContent = computerDraw;
+//             if (player_score > computer_score){
+//                 roundResult.textContent = 'YOU WON THE GAME! Your score was: ' + player_score;
+//             } else if (computer_score > player_score){
+//                 roundResult.textContent = 'YOU LOST THE GAME! Computer Score was: ' + computer_score;
+//             } else{
+//                 roundResult.textContent =  'It\'s a tie between you and the computer!'
+//             }
+//             player_score = 0
+//             computer_score = 0
+//             round = 0  
+//         }
+//     });
+// });

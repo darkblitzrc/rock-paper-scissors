@@ -24,7 +24,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem;
     height: 12rem;
     width: 30rem;
     background: #E8E8E8;
@@ -80,5 +79,19 @@ body{
     font-size: 22px;
     text-align: center;
     color: #0072af;
-    margin: 22px;
+}
+
+.testing-icons{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rock{
+    transition: heigth 40ms, width 40ms;
+}
+.rock:active {
+    height: 90px;
+    width: 90px;
 }
