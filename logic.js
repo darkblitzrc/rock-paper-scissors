@@ -57,17 +57,17 @@ computerImage.style.display = 'flex';
 computerImage.style.justifyContent = 'center';
 
 let rock = document.createElement('img');
-rock.src = 'images/harvestable-resources-rock-dullite-2.svg';
+rock.src = './images/harvestable-resources-rock-dullite-2.svg';
 rock.height = '100'
 rock.width = '100'
 
 let scissors = document.createElement('img');
-scissors.src = 'images/Metal-Scissors.svg';
+scissors.src = './images/Metal-Scissors.svg';
 scissors.height = '100'
 scissors.width = '100'
 
 let paper = document.createElement('img');
-paper.src = 'images/Paper-Roll-.svg';
+paper.src = './images/Paper-Roll-.svg';
 paper.height = '100'
 paper.width = '100'
 
