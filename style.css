@@ -10,7 +10,7 @@ body{
 
 .main-menu {
     padding:1rem;
-    height:15rem;
+    height:22rem;
     width:25rem;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,51,78,1) 0%, rgba(54,144,162,1) 100%);
     border-radius: 8px;
@@ -45,6 +45,8 @@ body{
 
 .player-score{
     color: #DBF6E9;
+    text-align: center;
+    white-space: pre;
 }
 
 
@@ -76,4 +78,10 @@ body{
 .choice:active {
     height: 90px;
     width: 90px;
+}
+
+.computer-score{
+    color: #cabe9c;
+    text-align: center;
+    white-space: pre;
 }
