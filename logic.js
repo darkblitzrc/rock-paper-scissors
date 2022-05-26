@@ -101,9 +101,9 @@ choicesList.forEach(choice => {
 
             if (round == 5){
                 if (player_score > computer_score){
-                    roundResult.textContent = 'YOU WON THE GAME! Your score was: ' + player_score;
+                    roundResult.textContent = 'YOU WON THE GAME!'
                 } else if (computer_score > player_score){
-                    roundResult.textContent = 'YOU LOST THE GAME! Computer Score was: ' + computer_score;
+                    roundResult.textContent = 'YOU LOST THE GAME :('
                 } else{
                     roundResult.textContent =  'It\'s a tie between you and the computer!'
                 }
