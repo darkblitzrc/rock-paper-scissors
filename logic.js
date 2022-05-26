@@ -46,6 +46,8 @@ let currentRound = document.querySelector('.current-round');
 
 let pScore = document.querySelector('.player-score');
 
+let cScore = document.querySelector('.computer-score');
+
 let cDraw = document.querySelector('.computer-draw')
 
 let roundResult = document.querySelector('.round-result');
@@ -78,7 +80,8 @@ let round = 0
 choicesList.forEach(choice => {
     choice.addEventListener('click', (e) =>{
         playRound(e.target.id,computerPlay());
-            pScore.textContent = 'Your score is: ' + player_score;
+            pScore.textContent = 'Your score is: \r\n' + player_score;
+            cScore.textContent = 'Computer score is: \r\n' + computer_score;
             currentRound.textContent = 'Round ' + ++round;
             cDraw.textContent = 'Computer draws...'
             if (computerDraw == 'rock'){
