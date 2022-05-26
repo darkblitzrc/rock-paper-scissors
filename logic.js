@@ -57,7 +57,7 @@ computerImage.style.display = 'flex';
 computerImage.style.justifyContent = 'center';
 
 let rock = document.createElement('img');
-rock.src = "images/harvestable-resources-rock-dullite-2.svg";
+rock.src = 'images/harvestable-resources-rock-dullite-2.svg';
 rock.height = '100'
 rock.width = '100'
 
