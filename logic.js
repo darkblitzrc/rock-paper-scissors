@@ -99,19 +99,16 @@ choicesList.forEach(choice => {
             }
             roundResult.textContent = result;
 
-            if (round == 5){
-                if (player_score > computer_score){
-                    roundResult.textContent = 'YOU WON THE GAME!'
-                } else if (computer_score > player_score){
-                    roundResult.textContent = 'YOU LOST THE GAME :('
-                } else{
-                    roundResult.textContent =  'It\'s a tie between you and the computer!'
+            if (player_score == 5 || computer_score == 5){
+                if (player_score == 5){
+                    roundResult.textContent = 'YOU WON THE GAME! Good job!'
+                } else {
+                    roundResult.textContent = 'YOU LOST THE GAME, better luck next time!'
                 }
                 player_score = 0
                 computer_score = 0
                 round = 0  
             }
-        
     })
 })
 
